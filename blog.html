@@ -1,0 +1,183 @@
+<html>
+
+<style>
+{% load static %}
+
+html {
+	overflow-y: scroll; 
+}
+
+body {
+    background-color: rgb(31,36,45)
+}
+.center {
+  display: block;
+  width: auto;
+  max-height: 50%;
+  height:auto;
+  margin-left: 40px;
+}
+
+h1 {
+    font-family: "simplifica";
+    font-weight:normal;
+    font-size: 35px;
+    letter-spacing: 3px;
+}
+
+@font-face {
+  font-family: 'simplifica';
+  src: url({% static 'fonts/simplifica.woff' %}) format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url({% static 'fonts/simplifica.ttf' %}) format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+.tableElement {
+	margin-top:20px;
+	width:100%;
+	height:100%;
+	color:#DCE1D7
+}
+
+
+.redText {
+    color: rgb(184,106,106);
+    position:relative;
+    top:-10px;
+}
+
+.tealText {
+    font-family: "simplifica";
+    font-weight: bold;
+    font-size:25px;
+    letter-spacing:5px;
+    position:relative;
+    color: rgb(85,179,175);
+}
+
+.title {
+    font-family: "simplifica";
+    font-weight: bold;
+    font-size:25px;
+    letter-spacing:5px;
+    position:relative;
+    color: rgb(85,179,175);
+    text-align: center;
+}
+
+.date {
+    font-family: "simplifica";
+    font-size:14px;
+    letter-spacing:4px;
+    position:relative;
+    color: rgb(85,179,175);
+    text-align:center;
+}
+
+.subtitle {
+    font-family: "arial";
+    font-size:14px;
+    position:relative;
+    font-style:italic;
+    color: rgba(255,255,255,.95);
+    text-align:left;
+    margin-top:50px;
+    margin-bottom:20px;
+    margin-right:20%;
+    margin-left:20%;
+}
+
+.postBody {
+    font-family: "arial";
+    font-size:14px;
+    position:relative;
+    color: rgba(255,255,255,.95);
+    text-align:left;
+    margin-top:30px;
+    margin-bottom:5px;
+    margin-right:20%;
+    margin-left:20%;
+}
+
+.sourceRow{
+    color:white;
+    text-align: center;
+    font-size:20px;
+}
+
+.button {
+    color: rgb(184,223,221);
+    background-color: transparent;
+    border: 1px solid black;
+    display: block;
+    align-items: center;
+    border-color: rgb(184,223,221);
+    width: 275px;
+    height:60px;
+    font-size: 20px;
+    margin-top:30px;
+    margin: auto;
+
+}
+
+form {
+margin-top:75px;
+}
+
+.menuItem{
+    font-size: 23px;
+    display: block;
+    width: auto;
+    max-height: 50%;
+    height:auto;
+    margin-left:40px;
+    display: inline-block;
+    align-items: center;
+    top: 4px;
+}
+
+input {
+  color: rgb(184,223,221);
+    background-color: transparent;
+    border: 1px solid black;
+    display: block;
+    align-items: center;
+    padding-left: 10px;
+    border-color: gray;
+    width: 275px;
+    height:60px;
+    font-size: 20px;
+    text-align:center;
+    margin-right: 70px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(85,179,175);
+}
+
+</style>
+
+<div style="height:100%; width:100%">
+<div class = "snap-point flex" style="text-align:left">
+    <a href=".."><img src="{% static '/images/logo.png' %}"  class = "center flex-item" style="margin-bottom:25px;height:60px;max-width: 100%"></a>
+</div>
+<div style="width:100%;align:center;float:left;">
+<h1 class="date">FEBRUARY 8, 2020</h1>
+<h1 class="title">TESLA: POLITICAL BETA ANALYSIS</h1>
+<p class="subtitle">As we roll out this platform over the coming weeks, we will be using this blog to introduce some of the metrics found on our site, and to give examples of how they can be used in the investment process. In this post, we will be taking a closer look at political beta, and how it could be used to explain Tesla's recent price movement.</p>
+<img style="margin-left:35%;width:30%" src="https://media-exp1.licdn.com/dms/image/C5612AQEdrwX0XW771w/article-inline_image-shrink_1000_1488/0?e=1586390400&v=beta&t=i5BdzHk9IJHkH-wdqgWOf_GtWKPFz4mRObkoOibRGd0"></img>
+<p class="postBody">Given that this is an election year, one metric which we are tracking is how correlated every stock's performance is with the election probability of each of the presidential candidates. The proxy we used for a candidate's chance at being elected president in 2020 is PredictIt's prediction market, which allows users to buy or sell contracts on a certain candidate winning the election. From those transactions, we can find a market-determined probability of any candidate winning the election. We can then calculate the correlation between the daily change in each candidate's probability of being the next president of the United States and a stock's daily price change.</p>
+<p class="postBody">On daily data from June 2019 to December 2019, Tesla's stock price had a correlation coefficient of .557 with the probability of Bernie Sanders being president in 2021. This makes sense intuitively, given Sander's proposals to create a nationwide electric-vehicle-charging infrastructure and establish a grant program for the exchange of combustion vehicles for new electric cars. The past two months of data have supported this trend, as Tesla stock's surge has been mimicked by Sanders' surge in polling.</p>
+<p class="postBody">In fact, Tesla's drop on February 5th was almost perfectly pre-empted by the release of Iowa Caucus results on the evening of the 4th (after market hours) that showed Pete Buttigieg holding a lead over Sanders. We don't claim that election news was the sole cause of Tesla's 17% tumble on Wednesday (the announcement of a production delay from the company's Shanghai plant seems to offer a more direct explanation) but we do suggest it as one factor.</p>
+<p class="postBody">With the New Hampshire Democratic primary taking place on Tuesday, we will be interested to see if changes in Sanders' presidential hopes are reflected in Tesla's stock returns over the following days.</p>
+</div>
+
+<footer style="margin-top:200px;background-color:rgb(50,50,61);padding-top:30px">
+    <img src="/static/images/smallLogo.png"  class = "center flex-item" style="margin-bottom:40px;height:50px;max-width: 75%;"></img>
+    <div style="background-color:rgb(50,50,61);height:2%;width:100%"></div>
+    </footer>
+    </div>
+</html>
