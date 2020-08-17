@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="fix">
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<title>Quiver Quantitative</title>
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Quiver Quantitative" />
+	<meta property="og:description"
+		content="Unlock the Power of Big Data with the Next Generation of Investment Analysis Tools" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="/static/images/senatetrading_preview.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="180"> <!-- size of og:image -->
+	<meta property="og:site_name" content="">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/static/favicon/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="/static/css/reset.css" />
+	<link rel="stylesheet" href="/static/style.css" />
+	<link rel="stylesheet" href="/static/css/responsive.css" />
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158102121-1"></script> 
+	<script> window.dataLayer = window.dataLayer || []; function 
+	gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
+	'UA-158102121-1'); </script> 
+	<style>
+	@media only screen and (max-device-width: 800px) {
+	body {
+		overflow-x: visible !important
+	}
+	.dashboard__content {
+		overflow-x: visible !important
+	}
+	.dashboard__content_main {
+		width:200% !important
+	}
+	}
+	</style>
+</head>
+<body>
+
+
+<header class="main__header dashboard__header">
+	<div class="main__header_inner">
+		<a href="/" class="logo">
+			<img src="/static/img/logo.png" alt="">
+		</a>
+		<!-- <div class="right">
+			<a href="javascript:void(0);" class="mobile-menu-button">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+		</div> -->
+	</div>
+</header>
+
+
+<main id="dashboard" class="dashboard collapsed">
+	<!-- <div id="dashboard__sidebar" class="dashboard__sidebar">
+		<div class="dashboard__sidebar_trigger"></div>
+		<div class="dashboard__sidebar_header">
+			<a href="javascript:void(0);" class="logo">
+				<img src="/static/img/logo-icon.png" alt="">
+				<span>QUIVER QUANTITATIVE</span>
+			</a>
+		</div>
+		<div class="dashboard__sidebar_main">
+			<div class="dashboard__sidebar_main_inner">
+				<div class="dashboard__sidebar_filter dropout">
+					<h6 class="dashboard__sidebar_filter_title"><img src="/static/img/link-icon.svg" alt="" class="icon"><span>Data by source</span></h6>
+					<div class="dashboard__sidebar_filter_field_wrapper">
+						<div class="dashboard__sidebar_filter_field">
+							<div class="dashboard__sidebar_filter_field_icon">
+								<img src="/static/img/link-icon.svg" alt="">
+							</div>
+							<div class="input">Select a source</div>
+							<input type="hidden" class="source__result_input">
+						</div>
+						<div class="dashboard__sidebar_filter_list_wrapper">
+							<div class="dashboard__sidebar_filter_list">
+								<ul>
+									<li><a href="https://www.quiverquant.com/sources/corporateflights">CORPORATE FLIGHTS</a></li>
+									<li><a href="https://www.quiverquant.com/sources/coronavirus">CORONAVIRUS - US SPREAD</a></li>
+									<li><a href="https://www.quiverquant.com/sources/covidTreatment">CORONAVIRUS - RESEARCH</a></li>
+									<li><a href="https://www.quiverquant.com/sources/ceocompensation">EXECUTIVE COMPENSATION</a></li>
+									<li><a href="https://www.quiverquant.com/sources/maude">FDA</a></li>
+									<li><a href="https://www.quiverquant.com/sources/insidertrading">INSIDER TRADING</a></li>
+									<li><a href="https://www.quiverquant.com/sources/sbaloans">PAYCHECK PROTECTION PROGRAM</a></li>
+									<li><a href="https://www.quiverquant.com/sources/climate">PREDICTIT - CLIMATE CHANGE</a></li>
+									<li><a href="https://www.quiverquant.com/sources/predictit">PREDICTIT - POLITICAL BETA</a></li>
+									<li><a href="https://www.quiverquant.com/sources/recession">PREDICTIT - RECESSION</a></li>
+									<li><a href="https://www.quiverquant.com/sources/robinhood">ROBINHOOD USER DATA</a></li>
+									<li><a href="https://www.quiverquant.com/sources/twitter">TWITTER</a></li>
+									<li><a href="https://www.quiverquant.com/sources/uspto">US PATENT OFFICE</a></li>
+									<li><a href="https://www.quiverquant.com/sources/senatetrading">US SENATOR TRADING</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="filter__item dropout mobile">
+					<div class="filter__item_header">
+						<a href="javascript:void(0);" class="filter__item_drop_link"></a>
+						<div class="filter__item_icon" style="background: #19D3F3">
+							<img src="/static/img/link-icon.svg" alt="">
+						</div>
+						<div class="filter__item_title">
+							<div class="filter__item_title_text">
+								<h4>Select source</h4>
+								<span>Data by source</span>
+							</div>
+						</div>
+					</div>
+					<div class="filter__item_content">
+						<a href="javascript:void(0);" class="back">Back</a>
+						<div class="filter__item_content_inner">
+							<ul>
+								<li><a href="https://www.quiverquant.com/sources/corporateflights">CORPORATE FLIGHTS</a></li>
+								<li><a href="https://www.quiverquant.com/sources/coronavirus">CORONAVIRUS - US SPREAD</a></li>
+								<li><a href="https://www.quiverquant.com/sources/covidTreatment">CORONAVIRUS - RESEARCH</a></li>
+								<li><a href="https://www.quiverquant.com/sources/ceocompensation">EXECUTIVE COMPENSATION</a></li>
+								<li><a href="https://www.quiverquant.com/sources/maude">FDA</a></li>
+								<li><a href="https://www.quiverquant.com/sources/insidertrading">INSIDER TRADING</a></li>
+								<li><a href="https://www.quiverquant.com/sources/sbaloans">PAYCHECK PROTECTION PROGRAM</a></li>
+								<li><a href="https://www.quiverquant.com/sources/climate">PREDICTIT - CLIMATE CHANGE</a></li>
+								<li><a href="https://www.quiverquant.com/sources/predictit">PREDICTIT - POLITICAL BETA</a></li>
+								<li><a href="https://www.quiverquant.com/sources/recession">PREDICTIT - RECESSION</a></li>
+								<li><a href="https://www.quiverquant.com/sources/robinhood">ROBINHOOD USER DATA</a></li>
+								<li><a href="https://www.quiverquant.com/sources/twitter">TWITTER</a></li>
+								<li><a href="https://www.quiverquant.com/sources/uspto">US PATENT OFFICE</a></li>
+								<li><a href="https://www.quiverquant.com/sources/senatetrading">US SENATOR TRADING</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="dashboard__sidebar_filter">
+					<h6 class="dashboard__sidebar_filter_title"><img src="/static/img/bag-icon.svg" alt="" class="icon"><span>Data by company</span></h6>
+					<div class="dashboard__sidebar_filter_field_wrapper">
+						<div class="dashboard__sidebar_filter_field">
+							<div class="dashboard__sidebar_filter_field_icon">
+								<img src="/static/img/bag-icon.svg" alt="">
+							</div>
+							<form action="" class="sidebar__ticker_search_form">
+								<input type="search" name="Search Ticker" id="search__ticker" placeholder="Enter Ticker">
+								<button type="submit">
+									<img src="/static/img/search-icon.svg" alt="">
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<nav class="sidebar__nav">
+					<h6 class="sidebar__nav_title">Other tools</h6>
+					<ul class="sidebar__nav_menu">
+						<li><a href="https://www.quiverquant.com/sources/corporateflights"><span>Corporate Flights</span></a></li>
+						<li><a href="https://www.quiverquant.com/sources/senatetrading"><span>US Senate Trading</span></a></li>
+						<li><a href="https://www.quiverquant.com/sources/housetrading"><span>US House Trading</span></a></li>
+						<li><a href="https://www.quiverquant.com/sources/insidertrading"><span>Insider Trading</span></a></li>
+						<li><a href="https://www.quiverquant.com/sources/covdidTreatment"><span>COVID-19 Research</span></a></li>
+						<li><a href="https://www.quiverquant.com/sources/sharedownership"><span>Shared Ownership</span></a></li>
+					</ul>
+				</nav>
+				<div class="button__wrapper">
+					<a href="https://www.quiverquant.com/quiverplus" class="btn__motion"><span class="first">q</span><span class="rest">uiver</span><span class="symbol">+</span></a>
+				</div>
+				<ul class="dashboard__actions mobile">
+					{% if user.is_authenticated %}
+					<li><a href="javascript:void(0);" class="greating"><span class="icon"></span> Hi, <span class="text">{{user.username}}</span></a></li>
+					<li><a href="https://www.quiverquant.com/logout" class="log__out"><img src="/static/img/logout-icon.png" alt="out"> Log Out</a></li>
+					{% else %}
+					<li><a href="https://www.twitter.com/QuiverQuant" class="log__out"><img src="/static/img/sign-in-icon.svg" alt="out"> Follow us</a></li>
+					<li><a href="https://www.quiverquant.com/register" class="log__out"><img src="/static/img/sign-up-icon.svg" alt="out"> Sign up</a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</div> -->
+	<div class="dashboard__content" style="width:100%">
+		<div class="dashboard__content_top" style="width:100%">
+			<ul class="dashboard__breadcrumbs">
+				<li><a href="../..">Home</a></li>
+				<li><a href="../..">Dashboard</a></li>
+				<li class="active"><a href="javascript:void(0);">Senate Trading</a></li>
+			</ul>
+			<ul class="dashboard__actions">
+					{% if user.is_authenticated %}
+					<li><a href="javascript:void(0);" class="greating"><span class="icon"></span> Hi, <span class="text">{{user.username}}</span></a></li>
+					<li><a href="https://www.quiverquant.com/logout" class="log__out"><img src="/static/img/logout-icon.png" alt="out"> Log Out</a></li>
+					{% else %}
+					<li><a href="https://www.twitter.com/QuiverQuant" class="log__out"><img src="/static/img/sign-in-icon.svg" alt="out"> Follow us</a></li>
+					<li><a href="https://www.quiverquant.com/register" class="log__out"><img src="/static/img/sign-up-icon.svg" alt="out"> Sign up</a></li>
+					{% endif %}
+			</ul>
+		</div>
+		<div class="dashboard__content_main" style="width:100%">
+			
+			<div class="trading">
+				<div class="graph__box">
+					<div style="height:50%" class="graph__box_inner">{{graph|safe}}</div>
+				</div>
+				<div class="graph__box">
+					<div style="height:50%" class="graph__box_inner">{{sentiment|safe}}</div>
+				</div>
+				<div style="margin-left:40px;margin-bottom:40px">
+				<a href="https://twitter.com/QuiverQuant?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @QuiverQuant for more visualizations</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
+				
+				<div class="metrics__list_box">
+					<div class="metrics__list_box_header">
+						<div class="box__title" data-icon-bg="#57D7BA">
+							<div class="box__title_icon">
+								<img src="/static/img/mi-4.svg" alt="">
+							</div>
+							<h5>Recent Transactions</h5>
+						</div>
+						<div class="box__filter">
+							<span class="box__filter_note">Click on a stock for more data</span>
+							<div class="box__filter_action">
+								<input type="text" id="myInput" placeholder="Filter by stock...">
+								<button class="run__filter">
+									<img src="/static/img/search-icon.svg" alt="">
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="metrics__list_box_body">
+						<table id="myTable">
+							<thead>
+								<tr>
+									<th>Stock <span>*</span></th>
+									<th>Date</th>
+									<th>Senator</th>
+									<th>Purchase / Sale</th>
+									<th>Amount</th>
+									<th>Party</th>
+								</tr>
+							</thead>
+
+
+							<tbody>
+
+								{% for info in senatetrading %}
+								<tr>
+									<td><a href="../dashboard/{{info.0}}">{{info.0}}</a></td>
+									<td><p style="display:none">{{info.1|date:"U"}}</p>{{info.1.month}}/{{info.1.day}}/{{info.1.year}}</td>
+									<td>{{info.2}}</td>
+									<td>{{info.3}}</td>
+									<td>{{info.4}}</td>
+									<td>{{info.5}}</td>
+								</tr>
+								{% endfor %}
+
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="content__filters_wrapper">
+					<h3 class="content__filters_main_title">OTHER DATASETS</h3>
+					<div class="content__filters other">
+
+						<div class="filter__item simple orange">
+							<div class="filter__item_header">
+								<a href="https://www.quiverquant.com/sources/housetrading" class="filter__item_drop_link"></a>
+								<div class="filter__item_icon" style="background: #FFA15A">
+									<img src="/static/img/mi-2.svg" alt="" style="min-width: 3.6rem">
+								</div>
+								<div class="filter__item_title">
+									<div class="filter__item_title_text">
+										<h4>House Trading</h4>
+										<span>Dashboard</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__item simple blue">
+							<div class="filter__item_header">
+								<a href="https://www.quiverquant.com/sources/corporateflights" class="filter__item_drop_link"></a>
+								<div class="filter__item_icon" style="background: #19D3F3">
+									<img src="/static/img/plane-icon.svg" alt="" style="min-width: 4.1rem; position: relative; left: 0.2rem;">
+								</div>
+								<div class="filter__item_title">
+									<div class="filter__item_title_text">
+										<h4>Corporate Flights</h4>
+										<span>Dashboard</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__item simple green">
+							<div class="filter__item_header">
+								<a href="https://www.quiverquant.com/sources/predictit" class="filter__item_drop_link"></a>
+								<div class="filter__item_icon" style="background: #22CF99">
+									<img src="/static/img/mi-2.svg" alt="" style="min-width: 3.6rem">
+								</div>
+								<div class="filter__item_title">
+									<div class="filter__item_title_text">
+										<h4>Political Beta</h4>
+										<span>Dashboard</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+			</div>
+
+		</div>
+		<footer class="main__footer">
+			<div class="main__footer_inner">
+				<div class="side left">
+					<a href="/" class="logo">
+						<img src="/static/img/logo.png" alt="">
+					</a>
+					<p class="note">Quiver scrapes alternative stock data from across the internet and aggregates it in a free, easy-to-use web dashboard.</p>
+					<div class="copy">
+						<span>Copyright © 2020 Quiver Quantitative, Inc. All rights reserved.</span>
+						<ul>
+							<li><a href="https://www.quiverquant.com/privacypolicy">Privacy Policy</a></li>
+							<li><a href="https://www.quiverquant.com/termsofservice">Terms of Service</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="side center">
+					<ul class="footer__menu">
+						<li class="active"><a href="/">Home</a></li>
+						<li><a href="../blog">Blog</a></li>
+						<li><a href="../aboutus">About</a></li>
+						<li><a href="mailto:james@quiverquant.com?subject=Contact Us">Contact</a></li>
+					</ul>
+				</div>
+				<div class="side right">
+					<div class="copy">
+						<span>Copyright © 2020 Quiver Quantitative, Inc. All rights reserved.</span>
+						<ul>
+							<li><a href="https://www.quiverquant.com/privacypolicy">Privacy Policy</a></li>
+							<li><a href="https://www.quiverquant.com/termsofservice">Terms of Service</a></li>
+						</ul>
+					</div>
+					<div class="autor">
+						<span>Design by: </span>
+						<a href="https://amen.team/" target="_blank"><img src="/static/img/amen-logo.svg" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		
+		
+		<!-- modals -->
+		{% if user.is_authenticated %}
+	{% else %}	
+        <div class="modal__window show" id="overview__window" style="">
+            <div class="modal__window_overlay"></div>
+            <div class="modal__window_content">
+                <button class="modal__window_close">
+                    <span class="modal__window_close_icon">
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <div class="modal__window_content_inner" style="padding:1.5rem 1.5rem 0rem">
+                        <h3 class="form__title"><span style="color:#FF1d58;font-weight:400">What is alternative data?</span></h3>
+                        <h3 style="font-size:2rem"><span class="form__notice">Alternative data refers to non-traditional data sources that can be used for stock analysis. Alternative data includes things like social media trends and web traffic data (and not anything that can be found on an income statement or balance sheet).</span>
+			<br><br>
+                        <span class="form__notice"><span style="font-weight:400;color:#57D7BA">Over the last decade, alternative data has exploded in popularity among hedge funds and Wall Street trading firms.</span> Professional investors spent almost $2B on alternative data in 2020. This data allows them to find unique insights on stocks, and gain an information edge over the rest of the market.</span>
+			<br><br>
+                        <span class="form__notice"><span style="font-weight:400;color:#57D7BA">However, alternative data is still almost completely inaccessible to non-professional investors.</span> Most providers charge thousands of dollars a year for access to their services, and in many cases only sell to institutional clients.</span>
+			<br><br>
+                        <span class="form__notice"><span style="font-weight:400;color:#57D7BA">We created this site to level the playing field between retail investors and Wall Street,</span> by providing high-quality alternative data on a free, easy-to-use platform.</span>
+			<br><br>
+                        <span class="form__notice"><a href="../../register">Click here to sign up</a></span>
+			</h3>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="modal__window" id="login__window">
+        <div class="modal__window_overlay"></div>
+        <div class="modal__window_content">
+            <button class="modal__window_close">
+                <span class="modal__window_close_icon">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="modal__window_content_inner">
+                <form action="../login/" class="login__form" method="post">
+                    {% csrf_token %}
+                    <h3 class="form__title">TRADE SMARTER</h3>
+                    <span class="form__notice">with our free, cutting-edge alternative data platform</span>
+                    <div class="field__wrapper name">
+                        <input type="text" name="username" placeholder="Username" id="username">
+                        <span class="error__text">Please enter user name</span>
+                    </div>
+                    <div class="field__wrapper pass valid">
+                        <input type="password" name="password" placeholder="Password" id="password">
+                        <span class="error__text">Password too short</span>
+                    </div>
+                    <div class="submit__wrapper">
+                        <button type="submit" class="btn">Sign in</button>
+                    </div>
+                    <div style="margin-bottom:0rem" class="redirect">Don't have an account? <a href="#register__window" class="modal__open">Sign Up for Free</a></div>
+                    <div class="redirect"><a href="../password_reset/" class="">Forgot password?</a></div>
+                </form>
+            </div>
+        </div>
+    </div>        
+    
+    <div class="modal__window" id="register__window">
+        <div class="modal__window_overlay"></div>
+        <div class="modal__window_content">
+            <button class="modal__window_close">
+                <span class="modal__window_close_icon">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="modal__window_content_inner">
+                <form action="../register/" class="login__form" method="post">
+                    {% csrf_token %}
+                    <h3 class="form__title">TRADE SMARTER</h3>
+                    <span class="form__notice">with our free, cutting-edge alternative data platform</span>
+                    <div class="field__wrapper name">
+                        <input type="text" name="username" required id="id_username" maxlength="150" placeholder="Username">
+                        <span class="error__text">Please enter user name</span>
+                    </div>
+                    <div class="field__wrapper email valid">
+                        <input type="email" name="email" placeholder="Email" required id="email">
+                        <span class="error__text">Please enter valid email</span>
+                    </div>
+                    <div class="field__wrapper pass valid">
+                        <input type="password" name="password1" placeholder="Password" required id="id_password1">
+                        <span class="error__text">Password too short</span>
+                    </div>
+                    <div class="field__wrapper pass valid">
+                        <input type="password" name="password2" placeholder="Confirm Password" required id="id_password2">
+                        <span class="error__text">Password too short</span>
+                    </div>
+                    <div class="submit__wrapper">
+                        <button type="submit" class="btn">Sign Up</button>
+                    </div>
+                    <div class="redirect">I already have an account, <a href="#login__window" class="modal__open">Sign In</a></div>
+                </form>
+            </div>
+        </div>
+		
+		
+			
+		
+			<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+            <script src="/static/js/dashboard.js"></script>
+            <script src="/static/js/registrationmenu.js"></script>
+		</body>
+		</html>
+	</div>
+</main>
