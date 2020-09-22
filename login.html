@@ -1,0 +1,118 @@
+<style>
+{% load static %}
+body {
+	background-color: rgb(31,36,45);
+	text-align: center;
+	align: center;
+	color: white;
+	font-family: 'simplifica';
+	font-size:16px
+}
+
+
+div.ext-box { margin-top:50px;display: table; width:100%;}
+div.int-box { display: table-cell; vertical-align: middle; }
+
+a {
+	text-decoration: none;
+	color: rgb(85,175,179);
+}
+
+button {
+color: rgb(184,223,221);
+    background-color: transparent;
+    border: 1px solid black;
+    align-items: center;
+    border-color: rgb(184,223,221);
+    width: 200px;
+    height:45px;
+    margin-top:10px;
+}
+
+@font-face {
+  font-family: 'simplifica';
+  src: url({% static 'fonts/simplifica.woff' %}) format('woff'), /* Chrome 6+, 
+Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url({% static 'fonts/simplifica.ttf' %}) format('truetype'); /* Chrome 4+, 
+Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+input {
+  color: rgb(184,223,221);
+    background-color: transparent;
+    border: 1px solid black;
+    display: inline-block;
+    margin-bottom: 30px;
+    align-items: center;
+    padding-left: 10px;
+    border-color: gray;
+    width: 200px;
+    height:30px;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+</style>
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158102121-1"></script>
+<script> 
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date()); 
+gtag('config','UA-158102121-1');
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<title>Quiver Quantitative</title>
+</head>
+{% block main %}
+<body>
+<!-- <p style="font-size:25px;margin-right:80px;margin-left:80px;font-family:arial;margin-top:40px;color:red">Due to high server load, we are temporarily requiring all visitors to create a free account to view our content. If you'd prefer not to create an account, check back later after traffic has slowed.</p>
+<p style="font-size:20px;margin-right:80px;margin-left:80px;font-family:arial;margin-top:0px;color:red"><a style="color:#40c4ff" href="https://twitter.com/QuiverQuant">Follow us on Twitter for updates</a></p> -->
+<div class="ext-box" style="vertical-align: middle">
+<div class="int-box">
+    <div id="login">
+        <form class="form-horizontal" name="LoginForm" action="/login/" 
+method="post">
+        {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <div class="control-group">
+            <div class="controls">
+                <input type="text" id="username" name="username" 
+placeholder="Username">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="password" name="password" id="password" 
+placeholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </div>
+        </form>
+<div style="margin-top:30px; text-align:center;font-family:avenir next">
+<a href="../password_reset" target="blank"><strong>Forgot your password?</strong></a>
+<br><br>New to Quiver?  <a href="../register" target="blank"><strong>Create an account</strong></a>
+{% if error == "TRUE" %}
+<h1 style="color:rgb(184,106,106); font-size:20px">Incorrect Username or Password</h1>
+{% endif %}
+</div>
+</div>
+</div>
+</div>
+</body>
+{% endblock %}
