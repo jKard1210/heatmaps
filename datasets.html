@@ -1,0 +1,496 @@
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+<head>
+<style>
+body {
+	background-color:#1f242d;
+	font-family: "Rubik", sans-serif;
+	font-size:1.4rem;
+	text-transform: none;
+  padding-bottom:100px;
+}
+a:link {
+  color:aquamarine;
+}
+/* visited link */
+a:visited {
+  color:aquamarine;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(29,161,242);
+}
+
+/* selected link */
+a:active {
+  color: rgb(29,161,242);
+}
+h1 {
+	font-size:2.8rem;
+	font-weight:700;
+	text-transform: uppercase;
+	color: #fff;
+	margin-bottom: 2rem;
+	text-transform: inherit;
+	font-weight: inherit;
+}
+
+    .referlistcontainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #referlistemail {
+      width: 350px;
+      margin-right: 10px;
+      height: 55px;
+      border-radius: 32px;
+      border-color: transparent;
+      font-size: 22px;
+      padding-left: 10px;
+    }
+    #referlistbutton {
+      width: 250px;
+      height: 55px;
+      border: none;
+      border-radius: 32px;
+      font-size: 22px;
+      background-color: #FF1d58;
+      color: white;
+    }
+    .referlistinnercontainer {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+
+    .info-button{
+      position:static;
+      display:inline-block;
+      height:auto;
+      padding: 1.3em 2em;
+      color:#ff1d58;
+      border-radius: 8px;
+      border: 2px solid #ff1d58;
+      text-decoration: none;
+      font-size: 1.5rem;
+      text-indent: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all .6s;
+      width: 20rem;
+    }
+
+    .tierTitle {
+      font-size:1.7rem;
+      font-weight:400;
+      margin-left:0%;
+      margin-top:30px;
+      margin-bottom:5px;
+      color:white
+    }
+
+    .datasetTitle {
+      font-size:1.5rem;
+      font-weight:300;
+      margin-bottom:0px;
+      margin-top:0px;
+      color:#FF1d58
+    }
+
+    .datasetSubtitle {
+      font-size:1.2rem;
+      font-weight:300;
+      margin-bottom:0px;
+      margin-top:5px;
+      color:rgb(29,161,242);
+    }
+
+    .browseLink{
+      font-size:1rem;
+      text-decoration:none;
+      color:aquamarine
+    }
+
+    .docsText {
+      font-size:1rem;
+      font-weight:300;
+      margin-bottom:10px;
+      padding-top:2px;
+    }
+
+    .dataset {
+      border: 1px solid gray;
+      border-radius: 10px;
+      margin-left:0%;
+      padding: 1rem 1rem 1rem 1rem;
+      margin-bottom:10px;
+    }
+
+    code {
+    background-color: rgb(3, 12, 41,.5);
+    color: #ff1d58;
+    padding: 3px 6px;
+    line-height: 1.5rem;
+    font-size:1.0rem;
+    border: 1px solid #eaeef4;
+    border-radius:3px
+    }
+
+    table {
+      color:white;
+      text-align:left;
+    }
+
+    th {
+      padding-right:40px;
+      color:#ff1d58
+    }
+
+    td {
+      padding-right:40px;
+    }
+
+    table {
+      padding-bottom:20px;
+    }
+
+    span {
+      display:block
+    }
+  </style>
+  </head>
+  <body>
+    <div style="text-align:center">
+      <img style="max-height:10rem;max-width:90%;margin-bottom:20px" src="/static/img/api_logo.png">
+    </div>
+    </div>
+    <div style="text-align:left;margin-left:5%;margin-right:5%">
+        
+    <h1 class="tierTitle">Introduction</h1>
+    <h1 class="datasetSubtitle">API Reference</h1>
+    <h1 class="docsText">The Quiver API is based on REST, has resource-oriented URLs, returns JSON-encoded responses, and returns standard HTTP response codes.</h1>
+    <h1 class="docsText">The base url for the API is:   <code>https://api.quiverquant.com/beta/</code></h1>
+
+    <h1 class="datasetSubtitle">Authentication</h1>
+    <h1 class="docsText">You must include a valid authentication token in the header of all queries (which can be found on your <a href="../dashboard">account dashboard</a>). The account associated with the given authorization token must have access to the required tier of requested dataset, or else the query will return an error.</h1>
+    
+    <h1 class="datasetSubtitle">Examples</h1>
+      <div style="padding-top:10px;padding-bottom:10px">
+        <h1 class="docsText">Using cURL to get historical Senate trades for Apple</h1>
+        <div style="background-color:rgb(3, 12, 91,.5) !important;padding:1rem 1rem 1rem 1rem">
+        <code style="border-color: transparent;background-color:transparent">curl -X GET "https://api.quiverquant.com/beta/historical/senatetrading/aapl" -H "accept: application/json" -H "X-CSRFToken: TyTJwjuEC7VV7mOqZ622haRaaUr0x0Ng4nrwSRFKQs7vdoBcJlK9qjAS69ghzhFu" -H 'Authorization: Token {Your Authorization Token}'</code>
+          </div>
+      </div>
+      <div style="padding-top:10px;padding-bottom:10px;">
+        <h1 class="docsText">Using Python to get all recent trades by U.S. Representatives</h1>
+        <div style="background-color:rgb(3, 12, 91,.5) !important;padding:1rem 1rem 1rem 1rem">
+        <code style="border-color:transparent;background-color:transparent">import requests<span>url = "https://api.quiverquant.com/beta/live/housetrading"</span>
+          <span>headers = {'accept': 'application/json', 'X-CSRFToken': 'TyTJwjuEC7VV7mOqZ622haRaaUr0x0Ng4nrwSRFKQs7vdoBcJlK9qjAS69ghzhFu','Authorization': 'Token {Your Authorization Token}'}</span>
+          <span>r = requests.get(url, headers=headers)</span>print(r.content)</code>
+        </div>
+      </div>
+      
+    <h1 class="datasetSubtitle">Rate Throttles</h1>
+    <h1 class="docsText">There is a rate limit of 100 calls per second and 1,000 calls per minute. Exceeding this rate limit will result in reponse errors until the throttle resets.</h1>
+    <h1 class="datasetSubtitle">Support</h1>
+    <h1 class="docsText">If you find any issues with our API or have any questions, please reach out to james@quiverquant.com for support.</h1>
+
+      <h1 class="tierTitle" style="margin-top:10px">Tier 1 Datasets</h1>
+        <div class="dataset">
+          <h1 class="datasetTitle">Senate Trading</h1>
+            <h1 class="datasetSubtitle">Description</h1>
+              <h1 class="docsText">The Stock Trading on Congressional Knowledge Act requires U.S. Senators to publicly file and disclose any financial transaction within 45 days of its occurrence. We download those disclosures and parse them for stock trades.</h1>
+            <h1 class="datasetSubtitle">Available Methods</h1>
+              <div style="padding-top:15px;padding-bottom:10px">
+                <code>/historical/senatetrading/{ticker}</code>
+                <h1 class="docsText">Returns all of the stock transactions by U.S. Senators involving the given ticker</h1>
+              </div>
+              <div>
+                <code>/live/senatetrading</code>
+                <h1 class="docsText">Returns the most recent transactions by U.S. Senators</h1>
+              </div>
+            <h1 class="datasetSubtitle">Response Variables</h1>
+            <table>
+              <thead>
+                <th>Variable</th>
+                <th>Description</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Date</td>
+                  <td>Transaction date</td>
+                </tr>
+                <tr>
+                  <td>Ticker</td>
+                  <td>Ticker of shares transacted</td>
+                </tr>
+                <tr>
+                  <td>Senator</td>
+                  <td>Name of Senator who made the transaction</td>
+                </tr>
+                <tr>
+                  <td>Transaction</td>
+                  <td>Purchase or Sale</td>
+                </tr>
+                <tr>
+                  <td>Amount</td>
+                  <td>Transaction size ($)</td>
+                </tr>
+              </tbody>
+            </table>
+            <a class="browseLink" href="https://www.quiverquant.com/sources/senatetrading">Browse Data</a>
+        </div>
+        <div class="dataset">
+          <h1 class="datasetTitle">House Trading</h1>
+            <h1 class="datasetSubtitle">Description</h1>
+              <h1 class="docsText">The Stock Trading on Congressional Knowledge Act requires U.S. Representatives to publicly file and disclose any financial transaction within 45 days of its occurrence. We download those disclosures and parse them for stock trades.</h1>
+              <h1 class="datasetSubtitle">Available Methods</h1>
+              <div style="padding-top:15px;padding-bottom:10px">
+                <code>/historical/housetrading/{ticker}</code>
+                <h1 class="docsText">Returns all of the stock transactions by U.S. Representatives involving the given ticker</h1>
+              </div>
+              <div>
+                <code>/live/housetrading</code>
+                <h1 class="docsText">Returns the most recent transactions by U.S. Representatives</h1>
+              </div>
+              <h1 class="datasetSubtitle">Response Variables</h1>
+              <table>
+                <thead>
+                  <th>Variable</th>
+                  <th>Description</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Date</td>
+                    <td>Transaction date</td>
+                  </tr>
+                  <tr>
+                    <td>Ticker</td>
+                    <td>Ticker of shares transacted</td>
+                  </tr>
+                  <tr>
+                    <td>Representative</td>
+                    <td>Name of Representative who made the transaction</td>
+                  </tr>
+                  <tr>
+                    <td>Transaction</td>
+                    <td>Purchase or Sale</td>
+                  </tr>
+                  <tr>
+                    <td>Amount</td>
+                    <td>Transaction size ($)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a class="browseLink" href="https://www.quiverquant.com/sources/housetrading">Browse Data</a>
+        </div>
+        <div class="dataset">
+          <h1 class="datasetTitle">Government Contracts</h1>
+            <h1 class="datasetSubtitle">Description</h1>
+              <h1 class="docsText">USASpending.gov is the official open data source of federal spending information. Using their API, we are able to track how much money companies are awarded through government contracts.</h1>
+              <h1 class="datasetSubtitle">Available Methods</h1>
+              <div style="padding-top:15px;padding-bottom:10px">
+                <code>/historical/govcontracts/{ticker}</code>
+                <h1 class="docsText">Returns historical quarterly government contracts amounts for the given ticker</h1>
+              </div>
+              <div>
+                <code>/live/govcontracts</code>
+                <h1 class="docsText">Returns last quarter's government contract amounts for all companies</h1>
+              </div>
+              <h1 class="datasetSubtitle">Response Variables</h1>
+              <table>
+                <thead>
+                  <th>Variable</th>
+                  <th>Description</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ticker</td>
+                    <td>Company ticker</td>
+                  </tr>
+                  <tr>
+                    <td>Qtr</td>
+                    <td>Calendar quarter</td>
+                  </tr>
+                  <tr>
+                    <td>Year</td>
+                    <td>Year</td>
+                  </tr>
+                  <tr>
+                    <td>Amount</td>
+                    <td>Total government contract $ for ticker in given quarter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a class="browseLink" href="https://www.quiverquant.com/sources/govcontracts">Browse Data</a>
+        </div>
+        <!-- <h1 class="datasetTitle" style="margin-left:3%;font-size:1.3rem;margin-top:20px;margin-bottom:40px">More Datasets Coming Soon</h1> -->
+      <!-- <h1 class="datasetTitle">Lobbying</h1>
+        <h1 class="datasetSubtitle">Description</h1>
+          <h1 class="docsText">The lobbying disclosure act of 1995 requires lobbyists in the United States to 
+           disclose information about their activities, such as their clients, which issues they are lobbying on, and how much they are being paid. We collect this data and track how much money different companies
+           are spending on lobbying over time.
+            You can see how lobbying money is being spent in the United States, and who's spending it, on <a href="https://www.quiverquant.com/sources/lobbying">this</a> data dashboard</h1>
+
+      <h1 class="datasetTitle">CEO Compensation</h1>
+        <h1 class="datasetSubtitle">Description</h1>
+          <h1 class="docsText">
+        Filler
+         Text
+
+         You can see --- on <a href="https://www.quiverquant.com/sources/ceocompensation">this</a> data dashboard</h1> -->
+
+<!-- 
+      <h1 class="datasetTitle">Insider Trading</h1>
+        <h1 class="datasetSubtitle">Description</h1>    
+          <h1 class="docsText">
+                 Filler
+                  Text
+         
+                  You can see --- on <a href="https://www.quiverquant.com/wallstreetbets/">this</a> data dashboard</h1> -->
+
+
+    <h1 class="tierTitle">Tier 2 Datasets</h1>
+      <div class="dataset">
+          <h1 class="datasetTitle">Wikipedia Pageviews</h1>
+            <h1 class="datasetSubtitle">Description</h1>
+             <h1 class="docsText">We have mapped thousands of publicly traded companies to their respective Wikipedia articles and track how many people view their page every day.</h1>
+             <h1 class="datasetSubtitle">Available Methods</h1>
+             <div style="padding-top:15px;padding-bottom:10px">
+              <code>/historical/wikipedia/{ticker}</code>
+              <h1 class="docsText">Returns historical weekly Wikipedia pageviews for the given ticker</h1>
+            </div>
+            <div>
+              <code>/live/wikipedia</code>
+              <h1 class="docsText">Returns last week's Wikipedia pageview for every company</h1>
+            </div>
+            <h1 class="datasetSubtitle">Response Variables</h1>
+            <table>
+              <thead>
+                <th>Variable</th>
+                <th>Description</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ticker</td>
+                  <td>Company ticker</td>
+                </tr>
+                <tr>
+                  <td>Qtr</td>
+                  <td>Calendar quarter</td>
+                </tr>
+                <tr>
+                  <td>Year</td>
+                  <td>Year</td>
+                </tr>
+                <tr>
+                  <td>Amount</td>
+                  <td>Total government contract $ for ticker in given quarter</td>
+                </tr>
+              </tbody>
+            </table>
+             <a class="browseLink" href="https://www.quiverquant.com/sources/wikipedia">Browse Data</a>
+      </div>
+      <div class="dataset">
+        <h1 class="datasetTitle">WallStreetBets</h1>
+          <h1 class="datasetSubtitle">Description</h1>
+            <h1 class="docsText">WallStreetBets is a community on Reddit where participants discuss stock and option trading.
+         By parsing discussion on this forum, we can track the overall sentiment of retail investors, and which companies they're talking about.
+         <h1 class="datasetSubtitle">Available Methods</h1> 
+         <div style="padding-top:15px;padding-bottom:10px">
+          <code>/historical/wallstreetbets/{ticker}</code>
+          <h1 class="docsText">Returns historical daily mention counts for the given ticker</h1>
+        </div>
+        <div>
+          <code>/live/wallstreetbets</code>
+          <h1 class="docsText">Returns yesterday's mention counts for all companies</h1>
+        </div>
+        <h1 class="datasetSubtitle">Response Variables</h1>
+        <table>
+          <thead>
+            <th>Variable</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ticker</td>
+              <td>Company ticker</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>Date</td>
+            </tr>
+            <tr>
+              <td>Count</td>
+              <td>Number of ticker mentions on the date's WallStreetBets Daily Discussion thread</td>
+            </tr>
+          </tbody>
+        </table>
+         <a class="browseLink" href="https://www.quiverquant.com/wallstreetbets">Browse Data</a> 
+      </div>
+      <div class="dataset">
+        <h1 class="datasetTitle">Twitter</h1>
+          <h1 class="datasetSubtitle">Description</h1>
+            <h1 class="docsText">We have mapped thousands of publicly traded companies to their respective Twitter handles, and track how many people follow them over time.</h1>
+         <h1 class="datasetSubtitle">Available Methods</h1> 
+         <div style="padding-top:15px;padding-bottom:10px">
+          <code>/historical/twitter/{ticker}</code>
+          <h1 class="docsText">Returns historical Twitter follower counts for the given ticker</h1>
+        </div>
+        <div>
+          <code>/live/twitter</code>
+          <h1 class="docsText">Returns current Twitter follower count for all companies</h1>
+        </div>
+        <h1 class="datasetSubtitle">Response Variables</h1>
+        <table>
+          <thead>
+            <th>Variable</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ticker</td>
+              <td>Company ticker</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>Date</td>
+            </tr>
+            <tr>
+              <td>Followers</td>
+              <td>Number of followers of the company's Twitter page on the given date</td>
+            </tr>
+          </tbody>
+        </table>
+         <a class="browseLink" href="https://www.quiverquant.com/sources/twitter">Browse Data</a> 
+      </div>
+      <!-- <h1 class="datasetTitle" style="margin-left:3%;font-size:1.3rem;margin-top:20px;margin-bottom:40px">More Datasets Coming Soon</h1> -->
+
+      <!-- <h1 class="datasetTitle">Twitter</h1>
+        <h1 class="datasetSubtitle">Description</h1>
+          <h1 class="docsText">We have mapped thousands of publicly traded companies to their respective Twitter handles, and track how many people follow them over time.
+          You can see who's gained and lost the most followers this month on <a href="https://www.quiverquant.com/sources/twitter">this</a> data dashboard</h1> -->
+
+
+    <h1 class="tierTitle">Tier 3 Datasets</h1>   
+      <h1 class="datasetTitle" style="margin-left:0%;margin-bottom:40px">Coming Soon</h1>
+      <!-- <h1 class="datasetTitle">Corporate Flights</h1>
+        <h1 class="datasetSubtitle">Description</h1>
+          <h1 class="docsText">When aircraft get their location from a GPS navigation source such as a satellite, they emit a signal containing information on the location of the plane. Third parties are able to pick up this signal, track the path of a plane, and estimate where it is departing from and traveling to. By combining this information (provided by The OpenSky Network) with flight registration data, we are able to track the movement of corporate private jets.
+     You can see the most recent flights on <a href="http://quiverquant.com/sources/corporateflights">this</a> data dashboard</h1> -->
+
+
+      
+
+
+    </div>
+  </body>
+
+  <!-- End referlist signup form -->
